@@ -30,7 +30,10 @@ Zola offers a wide range of themes for different kinds of websites. You can expl
 
 ## Shortcodes
 
-Shortcodes are a feature used within Markdown content to insert complex HTML or handle repetitive tasks easily. You can define custom shortcodes by creating template files in the `./templates/shortcodes/` directory.
+[Shortcodes](https://www.getzola.org/documentation/content/shortcodes/) are a feature used within Markdown content to insert complex HTML or handle repetitive tasks easily. You can define custom shortcodes by creating template files in the `./templates/shortcodes/` directory.
+
+* [youtube](./shortcodes/youtube.html): `{{ youtube(id='dCKeXuV...') }}`
+* [mermaid](./shortcodes/mermaid.html): `{{ mermaid() }}`
 
 ## Sub Commands
 
