@@ -32,12 +32,27 @@ Zola offers a wide range of themes for different kinds of websites. You can expl
 
 [Shortcodes](https://www.getzola.org/documentation/content/shortcodes/) are a feature used within Markdown content to insert complex HTML or handle repetitive tasks easily. You can define custom shortcodes by creating template files in the `./templates/shortcodes/` directory.
 
-* [youtube](./shortcodes/youtube.html): `{{ youtube(id='dCKeXuV...') }}`
-* [mermaid](./shortcodes/mermaid.html): `{{ mermaid() }}`
-* [asciinema](./shortcodes/asciinema.html): `{{ asciinema(id='123456') }}`
-* [vimeo](./shortcodes/vimeo.html): `{{ vimeo(id='123456789') }}`
-* [google_map](./shortcodes/google_map.html): `{{ google_map(api_key='YOUR_API_KEY', query='Tokyo Tower') }}`
-* [gist](./shortcodes/gist.html): `{{ gist(username='username', id='gistid') }}`
+### Video Service
+
+* [youtube](./shortcodes/video_service/youtube.html): `{{ youtube(id='dCKeXuV...') }}`
+* [vimeo](./shortcodes/video_service/vimeo.html): `{{ vimeo(id='123456789') }}`
+* [asciinema](./shortcodes/video_service/asciinema.html): `{{ asciinema(id='123456') }}`
+
+### Code & Diagram
+
+* [mermaid](./shortcodes/code_diagram/mermaid.html): `{{ mermaid() }}`
+* [gist](./shortcodes/code_diagram/gist.html): `{{ gist(username='username', id='gistid') }}`
+
+### Map Service
+
+* [google_map](./shortcodes/map_service/google_map.html): `{{ google_map(api_key='YOUR_API_KEY', query='Tokyo Tower') }}`
+* [kakao_map](./shortcodes/map_service/kakao_map.html): `{{ kakao_map(api_key='YOUR_KAKAO_API_KEY', lat='37.566826', lng='126.978656') }}`
+* [naver_map](./shortcodes/map_service/naver_map.html): `{{ naver_map(client_id='YOUR_CLIENT_ID', lat='37.3595704', lng='127.105399') }}`
+
+### Social Media
+
+* [x_share](./shortcodes/social_media/x_share.html): `{{ x_card(url='https://example.com', text='Check out this awesome post!') }}`
+* [facebook_share](./shortcodes/social_media/facebook_share.html): `{{ facebook_card(url='https://example.com', quote='Check out this awesome post!') }}`
 
 ## Sub Commands
 

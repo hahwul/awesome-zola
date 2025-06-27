@@ -1,0 +1,60 @@
+<div {% if class %}class="{{class}}"{% endif %} id="naver-map-{{id | default(value='map')}}" style="width:{% if width %}{{width}}{% else %}100%{% endif %};height:{% if height %}{{height}}{% else %}400{% endif %}px;"></div>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId={{client_id}}{% if submodules %}&submodules={{submodules}}{% endif %}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var mapOptions = {
+      center: new naver.maps.LatLng({{lat | default(value='37.3595704')}}, {{lng | default(value='127.105399')}}),
+      zoom: {{zoom | default(value='10')}}
+      {% if mapType %},
+      mapTypeId: naver.maps.MapTypeId.{{mapType | upper}}
+      {% endif %}
+      {% if minZoom %},
+      minZoom: {{minZoom}}
+      {% endif %}
+      {% if maxZoom %},
+      maxZoom: {{maxZoom}}
+      {% endif %}
+    };
+
+    var map = new naver.maps.Map('naver-map-{{id | default(value='map')}}', mapOptions);
+
+    {% if marker %}
+    // Add a marker
+    var marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng({{marker_lat | default(lat) | default(value='37.3595704')}}, {{marker_lng | default(lng) | default(value='127.105399')}}),
+      map: map
+    });
+
+    {% if info_window %}
+    // Add info window
+    var infoWindow = new naver.maps.InfoWindow({
+      content: '{{info_window | safe}}'
+    });
+
+    naver.maps.Event.addListener(marker, "click", function(e) {
+      if (infoWindow.getMap()) {
+        infoWindow.close();
+      } else {
+        infoWindow.open(map, marker);
+      }
+    });
+    {% endif %}
+    {% endif %}
+
+    {% if controls == "true" %}
+    // Add zoom control
+    map.setOptions({
+      zoomControl: true,
+      zoomControlOptions: {
+        style: naver.maps.ZoomControlStyle.SMALL,
+        position: naver.maps.Position.TOP_RIGHT
+      }
+    });
+
+    // Add map type control
+    map.setOptions({
+      mapTypeControl: true
+    });
+    {% endif %}
+  });
+</script>
