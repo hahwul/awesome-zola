@@ -34,6 +34,10 @@ Zola offers a wide range of themes for different kinds of websites. You can expl
 
 * [youtube](./shortcodes/youtube.html): `{{ youtube(id='dCKeXuV...') }}`
 * [mermaid](./shortcodes/mermaid.html): `{{ mermaid() }}`
+* [asciinema](./shortcodes/asciinema.html): `{{ asciinema(id='123456') }}`
+* [vimeo](./shortcodes/vimeo.html): `{{ vimeo(id='123456789') }}`
+* [google_map](./shortcodes/google_map.html): `{{ google_map(api_key='YOUR_API_KEY', query='Tokyo Tower') }}`
+* [gist](./shortcodes/gist.html): `{{ gist(username='username', id='gistid') }}`
 
 ## Sub Commands
 

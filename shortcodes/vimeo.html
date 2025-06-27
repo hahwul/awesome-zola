@@ -1,0 +1,10 @@
+<div {% if class %}class="{{class}}"{% endif %}>
+    <iframe
+        src="https://player.vimeo.com/video/{{id}}{% if autoplay %}?autoplay=1{% endif %}"
+        width="{% if width %}{{width}}{% else %}640{% endif %}"
+        height="{% if height %}{{height}}{% else %}360{% endif %}"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>

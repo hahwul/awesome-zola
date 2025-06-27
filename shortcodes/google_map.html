@@ -1,0 +1,12 @@
+<div {% if class %}class="{{class}}"{% endif %}>
+    <iframe
+        width="{% if width %}{{width}}{% else %}600{% endif %}"
+        height="{% if height %}{{height}}{% else %}450{% endif %}"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key={{api_key}}
+          &q={{query | urlencode}}{% if zoom %}&zoom={{zoom}}{% endif %}">
+    </iframe>
+</div>
