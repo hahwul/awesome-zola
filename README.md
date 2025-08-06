@@ -59,3 +59,7 @@ Zola offers a wide range of themes for different kinds of websites. You can expl
 This is a list of unofficial subcommands.
 
 * `zola new`: https://gitlab.com/bemyak/zola-new
+
+## Tools
+
+* [obsidian-zola](https://github.com/ppeetteerrs/obsidian-zola): A no-brainer solution to turning your Obsidian PKM into a Zola site.
